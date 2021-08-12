@@ -1,0 +1,12 @@
+D:\HostelSystem\SimpleApp.API\SimpleApp.Data\bin\Debug\netcoreapp3.1\SimpleApp.Data.deps.json
+D:\HostelSystem\SimpleApp.API\SimpleApp.Data\bin\Debug\netcoreapp3.1\SimpleApp.Data.runtimeconfig.json
+D:\HostelSystem\SimpleApp.API\SimpleApp.Data\bin\Debug\netcoreapp3.1\SimpleApp.Data.runtimeconfig.dev.json
+D:\HostelSystem\SimpleApp.API\SimpleApp.Data\bin\Debug\netcoreapp3.1\SimpleApp.Data.dll
+D:\HostelSystem\SimpleApp.API\SimpleApp.Data\bin\Debug\netcoreapp3.1\SimpleApp.Data.pdb
+D:\HostelSystem\SimpleApp.API\SimpleApp.Data\obj\Debug\netcoreapp3.1\SimpleApp.Data.csproj.AssemblyReference.cache
+D:\HostelSystem\SimpleApp.API\SimpleApp.Data\obj\Debug\netcoreapp3.1\SimpleApp.Data.AssemblyInfoInputs.cache
+D:\HostelSystem\SimpleApp.API\SimpleApp.Data\obj\Debug\netcoreapp3.1\SimpleApp.Data.AssemblyInfo.cs
+D:\HostelSystem\SimpleApp.API\SimpleApp.Data\obj\Debug\netcoreapp3.1\SimpleApp.Data.csproj.CoreCompileInputs.cache
+D:\HostelSystem\SimpleApp.API\SimpleApp.Data\obj\Debug\netcoreapp3.1\SimpleApp.Data.dll
+D:\HostelSystem\SimpleApp.API\SimpleApp.Data\obj\Debug\netcoreapp3.1\SimpleApp.Data.pdb
+D:\HostelSystem\SimpleApp.API\SimpleApp.Data\obj\Debug\netcoreapp3.1\SimpleApp.Data.genruntimeconfig.cache
