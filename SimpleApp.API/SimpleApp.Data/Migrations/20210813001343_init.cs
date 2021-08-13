@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SimpleApp.Data.Migrations
 {
-    public partial class Init : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -66,6 +66,26 @@ namespace SimpleApp.Data.Migrations
                         principalTable: "Rezerwacje",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Goscie",
+                columns: new[] { "Id", "DataUrodzenia", "Email", "Imie", "KodPocztowy", "Nazwisko" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "adam.adamowski@gmail.com", "Adam", null, "Adamowski" },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "piotr.piotrowski@gmail.com", "Piotr", null, "Piotrowski" },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "bartosz.bartoszowski@gmail.com", "Bartosz", null, "Bartoszowski" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Rezerwacje",
+                columns: new[] { "Id", "Cena", "DataUtworzenia", "DataWymeldowania", "DataZameldowania", "KodRezerwacji", "Prowizja", "Waluta", "Zrodlo" },
+                values: new object[,]
+                {
+                    { 1, 120f, new DateTime(2021, 8, 13, 2, 13, 43, 59, DateTimeKind.Local).AddTicks(3372), new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(6118), new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(5831), 1, 0f, "PLN", null },
+                    { 2, 150f, new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7193), new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7230), new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7222), 2, 0f, "PLN", null },
+                    { 3, 170f, new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7270), new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7275), new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7273), 3, 0f, "PLN", null }
                 });
 
             migrationBuilder.CreateIndex(

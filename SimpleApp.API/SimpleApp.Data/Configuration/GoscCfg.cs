@@ -17,7 +17,6 @@ namespace SimpleApp.Data.Configuration
             builder.Property(x => x.Email).IsRequired();
             builder.Property(x => x.Id).IsRequired();
             builder.HasMany(x => x.Rezerwacje).WithMany(x => x.Goscie);
-            
         }
     }
 }

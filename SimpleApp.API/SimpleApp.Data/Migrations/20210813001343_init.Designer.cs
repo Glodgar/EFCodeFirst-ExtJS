@@ -10,8 +10,8 @@ using SimpleApp.Data;
 namespace SimpleApp.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210812140349_Init")]
-    partial class Init
+    [Migration("20210813001343_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -64,6 +64,32 @@ namespace SimpleApp.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Goscie");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DataUrodzenia = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "adam.adamowski@gmail.com",
+                            Imie = "Adam",
+                            Nazwisko = "Adamowski"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DataUrodzenia = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "piotr.piotrowski@gmail.com",
+                            Imie = "Piotr",
+                            Nazwisko = "Piotrowski"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DataUrodzenia = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "bartosz.bartoszowski@gmail.com",
+                            Imie = "Bartosz",
+                            Nazwisko = "Bartoszowski"
+                        });
                 });
 
             modelBuilder.Entity("SimpleApp.Data.Models.Rezerwacja", b =>
@@ -102,6 +128,41 @@ namespace SimpleApp.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Rezerwacje");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Cena = 120f,
+                            DataUtworzenia = new DateTime(2021, 8, 13, 2, 13, 43, 59, DateTimeKind.Local).AddTicks(3372),
+                            DataWymeldowania = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(6118),
+                            DataZameldowania = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(5831),
+                            KodRezerwacji = 1,
+                            Prowizja = 0f,
+                            Waluta = "PLN"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Cena = 150f,
+                            DataUtworzenia = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7193),
+                            DataWymeldowania = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7230),
+                            DataZameldowania = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7222),
+                            KodRezerwacji = 2,
+                            Prowizja = 0f,
+                            Waluta = "PLN"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Cena = 170f,
+                            DataUtworzenia = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7270),
+                            DataWymeldowania = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7275),
+                            DataZameldowania = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7273),
+                            KodRezerwacji = 3,
+                            Prowizja = 0f,
+                            Waluta = "PLN"
+                        });
                 });
 
             modelBuilder.Entity("GoscRezerwacja", b =>

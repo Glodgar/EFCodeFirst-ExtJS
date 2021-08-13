@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SimpleApp.Data.DataSeed;
 using SimpleApp.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace SimpleApp.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            modelBuilder.Seed();
         }
     }
 }
