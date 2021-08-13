@@ -31,6 +31,16 @@ namespace SimpleApp.Data.DataSeed
                     Nazwisko = "Bartoszowski",
                     Email = "bartosz.bartoszowski@gmail.com",
                     Id = 3
+                },
+                new Gosc
+                {
+                    Imie = "Jacek",
+                    Nazwisko = "Jackowski",
+                    Email = "jacek.jackowski@gmail.com",
+                    Id = 4,
+                    Telefon = "123 456 789",
+                    Adres = "ul. Jackowska 56",
+                    Miasto = "Warszawa",
                 }
             );
 
