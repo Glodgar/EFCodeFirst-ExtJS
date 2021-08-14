@@ -13,6 +13,7 @@ namespace SimpleApp.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         public DbSet<Rezerwacja> Rezerwacje { get; set; }
         public DbSet<Gosc> Goscie { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -10,7 +10,7 @@ using SimpleApp.Data;
 namespace SimpleApp.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210813001343_init")]
+    [Migration("20210813145351_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,6 +43,9 @@ namespace SimpleApp.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Adres")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("DataUrodzenia")
                         .HasColumnType("datetime2");
 
@@ -57,8 +60,14 @@ namespace SimpleApp.Data.Migrations
                     b.Property<string>("KodPocztowy")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Miasto")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Nazwisko")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefon")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -80,15 +89,25 @@ namespace SimpleApp.Data.Migrations
                             DataUrodzenia = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "piotr.piotrowski@gmail.com",
                             Imie = "Piotr",
+                            Miasto = "Wrocław",
                             Nazwisko = "Piotrowski"
                         },
                         new
                         {
                             Id = 3,
                             DataUrodzenia = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "bartosz.bartoszowski@gmail.com",
-                            Imie = "Bartosz",
-                            Nazwisko = "Bartoszowski"
+                            Email = "piotr.piotrowski@gmail.com",
+                            Imie = "Piotr",
+                            Nazwisko = "Piotrowski"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DataUrodzenia = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "piotr.piotrowski@gmail.com",
+                            Imie = "Piotr",
+                            Miasto = "Gliwice",
+                            Nazwisko = "Piotrowski"
                         });
                 });
 
@@ -134,32 +153,10 @@ namespace SimpleApp.Data.Migrations
                         {
                             Id = 1,
                             Cena = 120f,
-                            DataUtworzenia = new DateTime(2021, 8, 13, 2, 13, 43, 59, DateTimeKind.Local).AddTicks(3372),
-                            DataWymeldowania = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(6118),
-                            DataZameldowania = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(5831),
+                            DataUtworzenia = new DateTime(2021, 8, 13, 16, 53, 50, 844, DateTimeKind.Local).AddTicks(3062),
+                            DataWymeldowania = new DateTime(2021, 8, 13, 16, 53, 50, 846, DateTimeKind.Local).AddTicks(6886),
+                            DataZameldowania = new DateTime(2021, 8, 13, 16, 53, 50, 846, DateTimeKind.Local).AddTicks(5874),
                             KodRezerwacji = 1,
-                            Prowizja = 0f,
-                            Waluta = "PLN"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Cena = 150f,
-                            DataUtworzenia = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7193),
-                            DataWymeldowania = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7230),
-                            DataZameldowania = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7222),
-                            KodRezerwacji = 2,
-                            Prowizja = 0f,
-                            Waluta = "PLN"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Cena = 170f,
-                            DataUtworzenia = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7270),
-                            DataWymeldowania = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7275),
-                            DataZameldowania = new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7273),
-                            KodRezerwacji = 3,
                             Prowizja = 0f,
                             Waluta = "PLN"
                         });

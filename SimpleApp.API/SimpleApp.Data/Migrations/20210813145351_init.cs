@@ -17,7 +17,10 @@ namespace SimpleApp.Data.Migrations
                     Nazwisko = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DataUrodzenia = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    KodPocztowy = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    KodPocztowy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Telefon = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Adres = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Miasto = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -70,23 +73,19 @@ namespace SimpleApp.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Goscie",
-                columns: new[] { "Id", "DataUrodzenia", "Email", "Imie", "KodPocztowy", "Nazwisko" },
+                columns: new[] { "Id", "Adres", "DataUrodzenia", "Email", "Imie", "KodPocztowy", "Miasto", "Nazwisko", "Telefon" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "adam.adamowski@gmail.com", "Adam", null, "Adamowski" },
-                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "piotr.piotrowski@gmail.com", "Piotr", null, "Piotrowski" },
-                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "bartosz.bartoszowski@gmail.com", "Bartosz", null, "Bartoszowski" }
+                    { 1, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "adam.adamowski@gmail.com", "Adam", null, null, "Adamowski", null },
+                    { 2, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "piotr.piotrowski@gmail.com", "Piotr", null, "Wrocław", "Piotrowski", null },
+                    { 3, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "piotr.piotrowski@gmail.com", "Piotr", null, null, "Piotrowski", null },
+                    { 4, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "piotr.piotrowski@gmail.com", "Piotr", null, "Gliwice", "Piotrowski", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Rezerwacje",
                 columns: new[] { "Id", "Cena", "DataUtworzenia", "DataWymeldowania", "DataZameldowania", "KodRezerwacji", "Prowizja", "Waluta", "Zrodlo" },
-                values: new object[,]
-                {
-                    { 1, 120f, new DateTime(2021, 8, 13, 2, 13, 43, 59, DateTimeKind.Local).AddTicks(3372), new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(6118), new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(5831), 1, 0f, "PLN", null },
-                    { 2, 150f, new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7193), new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7230), new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7222), 2, 0f, "PLN", null },
-                    { 3, 170f, new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7270), new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7275), new DateTime(2021, 8, 13, 2, 13, 43, 61, DateTimeKind.Local).AddTicks(7273), 3, 0f, "PLN", null }
-                });
+                values: new object[] { 1, 120f, new DateTime(2021, 8, 13, 16, 53, 50, 844, DateTimeKind.Local).AddTicks(3062), new DateTime(2021, 8, 13, 16, 53, 50, 846, DateTimeKind.Local).AddTicks(6886), new DateTime(2021, 8, 13, 16, 53, 50, 846, DateTimeKind.Local).AddTicks(5874), 1, 0f, "PLN", null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_GoscRezerwacja_RezerwacjeId",

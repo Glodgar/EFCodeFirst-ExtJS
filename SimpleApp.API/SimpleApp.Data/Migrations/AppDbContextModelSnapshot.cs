@@ -87,26 +87,25 @@ namespace SimpleApp.Data.Migrations
                             DataUrodzenia = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "piotr.piotrowski@gmail.com",
                             Imie = "Piotr",
+                            Miasto = "Wrocław",
                             Nazwisko = "Piotrowski"
                         },
                         new
                         {
                             Id = 3,
                             DataUrodzenia = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "bartosz.bartoszowski@gmail.com",
-                            Imie = "Bartosz",
-                            Nazwisko = "Bartoszowski"
+                            Email = "piotr.piotrowski@gmail.com",
+                            Imie = "Piotr",
+                            Nazwisko = "Piotrowski"
                         },
                         new
                         {
                             Id = 4,
-                            Adres = "ul. Jackowska 56",
                             DataUrodzenia = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "jacek.jackowski@gmail.com",
-                            Imie = "Jacek",
-                            Miasto = "Warszawa",
-                            Nazwisko = "Jackowski",
-                            Telefon = "123 456 789"
+                            Email = "daniel.danielowski@gmail.com",
+                            Imie = "Daniel",
+                            Miasto = "Wrocław",
+                            Nazwisko = "Danielowski"
                         });
                 });
 
@@ -152,32 +151,10 @@ namespace SimpleApp.Data.Migrations
                         {
                             Id = 1,
                             Cena = 120f,
-                            DataUtworzenia = new DateTime(2021, 8, 13, 11, 59, 0, 928, DateTimeKind.Local).AddTicks(5782),
-                            DataWymeldowania = new DateTime(2021, 8, 13, 11, 59, 0, 930, DateTimeKind.Local).AddTicks(8467),
-                            DataZameldowania = new DateTime(2021, 8, 13, 11, 59, 0, 930, DateTimeKind.Local).AddTicks(8170),
+                            DataUtworzenia = new DateTime(2021, 8, 14, 1, 2, 5, 976, DateTimeKind.Local).AddTicks(9006),
+                            DataWymeldowania = new DateTime(2021, 8, 14, 1, 2, 5, 979, DateTimeKind.Local).AddTicks(3492),
+                            DataZameldowania = new DateTime(2021, 8, 14, 1, 2, 5, 979, DateTimeKind.Local).AddTicks(3204),
                             KodRezerwacji = 1,
-                            Prowizja = 0f,
-                            Waluta = "PLN"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Cena = 150f,
-                            DataUtworzenia = new DateTime(2021, 8, 13, 11, 59, 0, 931, DateTimeKind.Local).AddTicks(65),
-                            DataWymeldowania = new DateTime(2021, 8, 13, 11, 59, 0, 931, DateTimeKind.Local).AddTicks(116),
-                            DataZameldowania = new DateTime(2021, 8, 13, 11, 59, 0, 931, DateTimeKind.Local).AddTicks(107),
-                            KodRezerwacji = 2,
-                            Prowizja = 0f,
-                            Waluta = "PLN"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Cena = 170f,
-                            DataUtworzenia = new DateTime(2021, 8, 13, 11, 59, 0, 931, DateTimeKind.Local).AddTicks(152),
-                            DataWymeldowania = new DateTime(2021, 8, 13, 11, 59, 0, 931, DateTimeKind.Local).AddTicks(158),
-                            DataZameldowania = new DateTime(2021, 8, 13, 11, 59, 0, 931, DateTimeKind.Local).AddTicks(155),
-                            KodRezerwacji = 3,
                             Prowizja = 0f,
                             Waluta = "PLN"
                         });

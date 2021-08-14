@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SimpleApp.API.Mapping;
 using SimpleApp.Data;
 using System;
 using System.Collections.Generic;
@@ -28,6 +30,16 @@ namespace SimpleApp.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            var mappingConfiguration = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new Configuration());
+            });
+
+            IMapper mapper = mappingConfiguration.CreateMapper();
+            services.AddSingleton(mapper);
+
+            services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("MvcMovieContext")));
