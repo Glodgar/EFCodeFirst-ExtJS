@@ -23,7 +23,7 @@ namespace SimpleApp.API.Controllers
         {
             _context = context;
             _mapper = mapper;
-        }
+        }        
 
         [HttpDelete]
         public async Task<IActionResult> DeleteGoscie()
@@ -33,8 +33,8 @@ namespace SimpleApp.API.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
-
-        [HttpDelete("/{Id}")]
+        
+        [HttpDelete("{Id}")]
         public async Task<IActionResult> DeleteGosc(int Id)
         {
             var gosc = await _context.Goscie.FindAsync(Id);
@@ -43,7 +43,7 @@ namespace SimpleApp.API.Controllers
             return Ok();
         }
 
-        [HttpDelete("/deleteGoscieImieMiasto")]
+        [HttpDelete("ImieMiasto")]
         public async Task<IActionResult> DeleteGoscieImieMiasto()
         {
             var goscie = _context.Goscie.Where(Gosc => (Gosc.Imie == "Piotr" && Gosc.Miasto == "Wrocław") || (Gosc.Imie == "Piotr" && Gosc.Miasto == null));
@@ -59,13 +59,5 @@ namespace SimpleApp.API.Controllers
             return Ok(goscie);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> AddGoscie([FromBody] RezerwacjaDTO rezerwacja)
-        {
-            var newRezerwacja = _mapper.Map<Rezerwacja>(rezerwacja);
-            _context.Rezerwacje.Add(newRezerwacja);
-            await _context.SaveChangesAsync();
-            return Ok(newRezerwacja);
-        }
     }
 }

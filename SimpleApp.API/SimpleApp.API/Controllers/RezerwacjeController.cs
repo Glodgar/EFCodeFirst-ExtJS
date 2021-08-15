@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SimpleApp.API.DTOs;
 using SimpleApp.Data;
+using SimpleApp.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,14 @@ namespace SimpleApp.API.Controllers
             return Ok(rezerwacje);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> AddRezerwacja([FromBody] RezerwacjaDTO rezerwacja)
+        {
+            var newRezerwacja = _mapper.Map<Rezerwacja>(rezerwacja);
+            _context.Rezerwacje.Add(newRezerwacja);
+            await _context.SaveChangesAsync();
+            return Ok(newRezerwacja);
+        }
     }
 }
 

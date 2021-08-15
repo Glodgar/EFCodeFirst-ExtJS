@@ -19,8 +19,6 @@ namespace SimpleApp.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
-            modelBuilder.Seed();
         }
     }
 }

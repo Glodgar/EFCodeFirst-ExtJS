@@ -56,6 +56,8 @@ namespace SimpleApp.API
                 app.UseDeveloperExceptionPage();
             }
 
+            app.SeedData();
+
             // Make sure you call this before calling app.UseMvc()
             app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
