@@ -41,6 +41,9 @@ namespace SimpleApp.API
 
             services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
+            services.AddCors();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
             services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("MvcMovieContext")));
         }
@@ -52,6 +55,9 @@ namespace SimpleApp.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // Make sure you call this before calling app.UseMvc()
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
