@@ -39,6 +39,15 @@ namespace SimpleApp.API.Controllers
             await _context.SaveChangesAsync();
             return Ok(newRezerwacja);
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteRezerwacje()
+        {
+            var rezerwacje = _context.Rezerwacje;
+            _context.Rezerwacje.RemoveRange(rezerwacje);
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
     }
 }
 
